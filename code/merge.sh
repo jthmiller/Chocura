@@ -83,31 +83,8 @@ qiime feature-classifier fit-classifier-naive-bayes \
   --i-reference-taxonomy /home/users/jtm1171/refdbs/mifish/july2023/12S-tax-derep-uniq.qza \
   --o-classifier mifish/results/mifish-2024.5-classifier-old.qza
 
-    ## taxonomy
-    maxaccepts=all
-    query_cov=0.90 
-    perc_identity=0.90
-    weak_id=0.80 
-    tophit_perc_identity=0.90
-
-### sklearn hybrid taxonomy
-qiime feature-classifier classify-hybrid-vsearch-sklearn \
-  --i-query mifish/results/Chocorua_rep-seqs.qza \
-  --i-classifier mifish/results/mifish-2024.5-classifier-old.qza \
-  --i-reference-reads /home/users/jtm1171/refdbs/mifish/july2023/mitofish+DAR+relaxed.fasta.qza \
-  --i-reference-taxonomy /home/users/jtm1171/refdbs/mifish/july2023/mitofish+DAR+relaxed.tax.qza \
-  --p-threads 8 \
-  --p-query-cov 0.95 \
-  --p-perc-identity 0.90 \
-  --p-maxrejects all \
-  --p-maxaccepts all \
-  --p-maxhits all \
-  --p-min-consensus 0.51 \
-  --p-confidence 0 \
-  --o-classification mifish/results/Chocorua_hybrid_taxonomy_old
 
 
-mi
 ### sklearn hybrid taxonomy
 qiime feature-classifier classify-hybrid-vsearch-sklearn \
   --i-query mifish/results/Chocorua_rep-seqs.qza \
